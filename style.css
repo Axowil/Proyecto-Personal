@@ -221,7 +221,6 @@ header.scrolled .nav-links a:hover {
         display: none;
     }
 
-    /* Responsive para la sección Sobre mí */
     .content {
         flex-direction: column;
         gap: 40px;
@@ -342,7 +341,7 @@ header.scrolled .nav-links a:hover {
 }
 hr {
     border: none;
-    height: 4px;
+    height: 2px;
     background: rgba(255, 215, 0, 0.6);
     border-radius: 2px;
     margin: 60px auto;
