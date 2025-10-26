@@ -1,0 +1,60 @@
+/* Contenedor principal */
+.redes-container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Título */
+.redes-container h3 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de items con Grid */
+.redes-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Cada elemento individual (ahora son enlaces) */
+.redes-item {
+    display: grid;
+    place-items: center;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 200px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Efecto hover en los enlaces */
+.redes-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Imágenes */
+.redes-item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Títulos de cada red social */
+.redes-item h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
