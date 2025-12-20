@@ -1,123 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Personal</title>
+    <title>AXOWILL - Portfolio Personal</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <header id="header">
-        <nav>
-            <a href="#" class="logo">Willian </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#hobbies-mi">Mis hobbies</a></li>
-                <li><a href="estudios.html">Estudios</a></li>
-                <li><a href="Redes.html">Redes-sociales</a></li>
-            </ul>
-    </header>
-
-    <section class="about-section" id="sobre-mi">
-    <div class="content">
-        <div class="introduccion">
-            <h1>Sobre mi</h1>
-            <p>Soy Willian Elmer Apaza , Estudiante de la Universidad Nacional de San agustin de la carrera de sistemas, Y les voy a compartir
-            algunas cosas que me gustan o que me llama la atencion. </p>
-            <p>si me tendria que describir seria que soy bueno Analizando cosas , me gusta charlar de ves en cuando
-            soy amigable,empatico y de principios , ya que nunca llego a romperlas a menos de que la sociedad 
-            este de acuerdo.
-        </p>
-        <p>
-            soy mucho de respetar de las reglas antiguas, pero estoy abierto para cambiar y adapartarme a las situaciones
-            , hay frases que me gustan bastantes.
-        </p>
-            <ul>
-                <li>
-                Yo solo sé que no sé nada 
-                </li>
-                <li>
-                    Pienso , luego actuo 
-                </li>
-                <li>
-                    Los logros no son magia , son esfuerzo y trabajo duro
-                </li>
-            </ul>
+<body class="dark">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AXOWILL</div>
+            <div class="nav-links">
+                <a href="#me">Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#now">Now</a>
+                <button class="theme-toggle" id="themeToggle">
+                   <img src="icons/sun.svg" alt="Theme" class="icon" id="themeIcon">
+                </button>   
             </div>
-            <div class="image-container">
-            <img src="/Imagenes/willn.png" alt="Willian Elmer Apaza">
         </div>
-    </div> 
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="me">
+        <div class="perfil-section">
+            <div class="perfil-imagen">
+                <img src="Imagenes/kaiser.jpg" alt="Willian">
+            </div>
+            <div class="social-links">
+                <a href="mailto:tu@email.com">
+                    <img src="icons/mail.svg" alt="Mail" class="icon">
+                    Mail
+                </a>
+                <a href="https://github.com/tu-usuario" target="_blank">
+                    <img src="icons/github.svg" alt="Github" class="icon">
+                    Github
+                </a>
+                <a href="https://facebook.com/tu-usuario" target="_blank">
+                    <img src="icons/facebook.svg" alt="Facebook" class="icon">
+                    Facebook
+                </a>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Hola, mi nombre es Willian</h1>
+            <p class="subtitle">
+                Construyo sitios web y aplicaciones web en diferentes industrias, 
+                utilizando un enfoque de diseño modular para mantener las cosas simples y escalables.
+            </p>
+            <p class="description">
+                Fuera del trabajo, probablemente me encontrarás corriendo o escalando 🏃. 
+                Si tienes un proyecto en mente o solo quieres saludar, ¡no dudes en contactarme!
+            </p>
+            <div class="cta-section">
+                <div class="status-badge">
+                    <span>Problamente este descansando asi que puedes enviarme un mensaje</span>
+                </div>
+                <a href="#contact" class="cta-button">
+                    Contáctame
+                    <img src="icons/arrow.svg" alt="Arrow" class="icon">
+                </a>
+            </div>
+        </div>
     </section>
-    <hr>
-    <section class="hobbies-section" id="hobbies-mi">
-    <h2>Mis hobbies</h2>
-    <!-- Videojuegos -->
-    <div class="hobby-container">
-        <h3>Videojuegos</h3>
-        <div class="hobby-items">
-            <div class="hobby-item">
-                <img src="/Imagenes/Ajedrez.jpg" alt="Ajedrez">
-                <h4>Ajedrez</h4>
-                <p>Un juego de estrategia que desafía la mente y mejora el pensamiento lógico.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/Left ford dead 2.jpeg" alt="Left 4 Dead 2">
-                <h4>Left 4 Dead 2</h4>
-                <p>Acción cooperativa llena de adrenalina y trabajo en equipo contra zombies.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/hollow-knight-ordem-das-zonas.jpg" alt="Hollow Knight">
-                <h4>Hollow Knight</h4>
-                <p>Una aventura atmosférica con exploración profunda y combates desafiantes.</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- Deportes -->
-    <div class="hobby-container">
-        <h3>Deportes</h3>
-        <div class="hobby-items">
-            <div class="hobby-item">
-                <img src="/Imagenes/futbol.jpg" alt="Fútbol">
-                <h4>Fútbol</h4>
-                <p>El deporte rey que fomenta la pasión, coordinación y espíritu de equipo.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/voley.jpg" alt="Vóley">
-                <h4>Vóley</h4>
-                <p>Deporte dinámico que requiere reflejos rápidos y comunicación constante.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/basquet.jpg" alt="Básquetbol">
-                <h4>Básquetbol</h4>
-                <p>Juego intenso que combina velocidad, precisión y estrategia colectiva.</p>
-            </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-header">
+            <h3>Proyectos Destacados (se agregarán más pronto)</h3>
+            <a href="#">
+                Juegos Favoritos
+                <img src="icons/arrow.svg" alt="Arrow" class="icon">
+            </a>
         </div>
-    </div>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Imagenes/Fotos-Entrada/Dota2.jpg" alt="Hollow Knight">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <p class="year">2017</p>
+                            <h4>Hollow Knight</h4>
+                            <p class="category">Metroidvania</p>
+                        </div>
+                        <img src="icons/arrow.svg" alt="Arrow" class="icon project-arrow">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Imagenes/Fotos-Entrada/fortnite.jpg" alt="Left 4 Dead 2">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <p class="year">2009</p>
+                            <h4>Left 4 Dead 2</h4>
+                            <p class="category">Survival Horror</p>
+                        </div>
+                        <img src="icons/arrow.svg" alt="Arrow" class="icon project-arrow">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Imagenes/Fotos-Entrada/phonk.png" alt="Phonk">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <p class="year">2024</p>
+                            <h4>Phonk Atmospheric</h4>
+                            <p class="category">Música</p>
+                        </div>
+                        <img src="icons/arrow.svg" alt="Arrow" class="icon project-arrow">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Imagenes/Fotos-Entrada/Chess.jpg" alt="Left 4 Dead 2">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <p class="year">2009</p>
+                            <h4>Left 4 Dead 2</h4>
+                            <p class="category">Survival Horror</p>
+                        </div>
+                        <img src="icons/arrow.svg" alt="Arrow" class="icon project-arrow">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+            
+            <!-- Botones de navegación -->
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">‹</button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">›</button>
+        </div>
+    </section>
 
-    <!-- Música -->
-    <div class="hobby-container">
-        <h3>Música</h3>
-        <div class="hobby-items">
-            <div class="hobby-item">
-                <img src="/Imagenes/phonk atmosperhic.jpg" alt="Phonk Atmospheric">
-                <h4>Phonk Atmospheric</h4>
-                <p>Sonidos oscuros y envolventes que crean una atmósfera única e inmersiva.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/metal-covers-header.png" alt="Pop Rock">
-                <h4>Pop Rock</h4>
-                <p>Energía vibrante con melodías pegajosas y ritmos que motivan el día.</p>
-            </div>
-            <div class="hobby-item">
-                <img src="/Imagenes/soft rock.jpg" alt="Soft Rock">
-                <h4>Soft Rock</h4>
-                <p>Melodías suaves y relajantes perfectas para momentos de tranquilidad.</p>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 AXOWILL. Hecho con HTML, CSS & JavaScript.</p>
         </div>
-    </div>
-</section>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
