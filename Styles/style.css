@@ -505,3 +505,164 @@ body.light .page-content ul,
 body.light .page-content ol {
     color: #666;
 }
+/* Estilos para cards de contenido - Mejorado */
+.content-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a 100%, #0a0a0a 100%);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+body.light .content-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.light .content-card:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Invertir orden  */
+.content-card.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-card.reverse .card-image {
+    order: 2;
+}
+
+.content-card.reverse .card-text {
+    order: 1;
+}
+
+/* Imagen dentro de la card */
+.card-image {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.content-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Texto dentro de la card */
+.card-text {
+    padding: 3rem;
+}
+
+.card-text h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+body.light .card-text h2 {
+    color: #111;
+}
+
+.card-text p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+body.light .card-text p {
+    color: #666;
+}
+
+/* Título principal de la página */
+.page-content > h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #fff 0%, #888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light .page-content > h1 {
+    background: linear-gradient(135deg, #111 0%, #666 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive para cards */
+@media (max-width: 1024px) {
+    .content-card,
+    .content-card.reverse {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+    
+    .content-card.reverse .card-image,
+    .content-card.reverse .card-text {
+        order: initial;
+    }
+
+    .card-image {
+        min-height: 300px;
+    }
+
+    .card-text {
+        padding: 2rem;
+    }
+
+    .card-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .page-content > h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-card {
+        margin: 2rem 1rem;
+    }
+
+    .card-image {
+        min-height: 250px;
+    }
+
+    .card-text {
+        padding: 1.5rem;
+    }
+
+    .card-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-content > h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
