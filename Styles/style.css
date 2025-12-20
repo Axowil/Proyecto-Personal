@@ -465,3 +465,43 @@ body.light .icon {
         right: 10px;
     }
 }
+/* Estilos para páginas adicionales */
+.page-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8rem 2rem 5rem; /* Padding top para que no quede bajo el nav */
+}
+
+.page-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #888;
+}
+
+body.light .page-content p {
+    color: #666;
+}
+
+/* Espaciado para listas */
+.page-content ul,
+.page-content ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    color: #888;
+}
+
+body.light .page-content ul,
+body.light .page-content ol {
+    color: #666;
+}

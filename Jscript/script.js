@@ -120,3 +120,14 @@ carouselTrack.addEventListener('mouseleave', () => {
 // Inicializar
 createIndicators();
 startAutoplay();
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href').split('#')[0];
+    if (linkPage === currentPage || (currentPage === 'index.html' && linkPage.includes('#'))) {
+        link.style.color = '#fff';
+        link.style.fontWeight = '600';
+    }
+});
