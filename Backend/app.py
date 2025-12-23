@@ -11,7 +11,7 @@ from database import (
 import os
 
 app = Flask(__name__)
-CORS(app)  # Permitir peticiones desde el frontend
+CORS(app, origins="*")  # Permitir peticiones desde el frontend
 
 # Inicializar base de datos al arrancar
 init_db()
