@@ -1,5 +1,5 @@
 // API URL - Cambiar cuando despliegues en Render
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://axowill.onrender.com';
 
 // Enviar formulario
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
