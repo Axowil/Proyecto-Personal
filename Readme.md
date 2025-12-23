@@ -1,13 +1,14 @@
-# 🚀 Mi Portfolio Personal
+#  Mi Portfolio Personal
 
-**URL del proyecto hospedado:** [https://portfolio-frontend-e62z.onrender.com/](https://portfolio-frontend-e62z.onrender.com/)
+**URL del proyecto front hospedado:** [https://portfolio-frontend-e62z.onrender.com/](https://portfolio-frontend-e62z.onrender.com/)
+**URL del proyecto back hospedado:** [https://backendwil.onrender.com](https://backendwil.onrender.com)
 
 
-## 📄 Descripción
+##  Descripción
 
 Portfolio personal interactivo desarrollado como proyecto final del curso de Desarrollo Web. Incluye secciones de presentación personal, blog organizado por categorías, estudios académicos, red de contactos y un sistema de mensajería con backend completo. El diseño es 100% responsive con tema claro/oscuro y efectos visuales modernos implementados con tecnologías web puras.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica del sitio
 - **CSS3** - Diseño responsive con Flexbox/Grid, animaciones y efectos visuales
@@ -15,7 +16,7 @@ Portfolio personal interactivo desarrollado como proyecto final del curso de Des
 - **Python 3** - Backend con Flask para API REST
 - **SQL (SQLite)** - Base de datos para almacenar mensajes de contacto
 
-## ✨ Características Principales
+##  Características Principales
 
 ### Frontend
 - ✅ Diseño responsive adaptable a móviles, tablets y desktop
@@ -36,7 +37,7 @@ Portfolio personal interactivo desarrollado como proyecto final del curso de Des
 - ✅ CORS habilitado para frontend/backend separados
 - ✅ Timestamps automáticos
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 portfolio/
@@ -58,7 +59,7 @@ portfolio/
 └── README.md
 ```
 
-## 🗄️ Esquema de Base de Datos
+##  Esquema de Base de Datos
 
 ### Tabla: `contact_messages`
 
@@ -72,7 +73,7 @@ portfolio/
 | created_at  | TIMESTAMP | Fecha de creación              |
 | read        | BOOLEAN   | Estado de lectura (0/1)        |
 
-## 🚀 Instalación Local
+## Instalación Local
 
 ### Prerequisitos
 - Python 3.8 o superior
@@ -107,7 +108,7 @@ El backend estará en `http://localhost:5000`
 - Abre `index.html` en tu navegador
 - O usa Live Server en VS Code
 
-## 🌐 Deployment en Render
+##  Deployment en Render
 
 ### Backend (Web Service)
 1. Conecta tu repositorio de GitHub
@@ -123,7 +124,7 @@ El backend estará en `http://localhost:5000`
    - **Publish Directory:** `.`
 3. Actualiza `API_URL` en `contact.html` con la URL del backend
 
-## 📡 Endpoints de la API
+##  Endpoints de la API
 
 ### `POST /api/contact`
 Envía un mensaje de contacto
@@ -149,22 +150,14 @@ Obtiene todos los mensajes
 ### `DELETE /api/messages/:id`
 Elimina un mensaje por ID
 
-## 🎨 Paleta de Colores
+##  Paleta de Colores
 
 - **Claro:** Blanco (#fff), Negro (#000), Grises (#888, #aaa)
 - **Oscuro:** Negro (#1a1a1a), Blanco (#fff)
 - **Acentos:** Gradientes dinámicos
 
-## 👨‍💻 Autor
+## Autor
 
-**[Tu Nombre]**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Email: tu@email.com
-
-## 📝 Licencia
-
-Este proyecto fue desarrollado como trabajo final para el curso de Desarrollo Web - [Nombre de la Universidad/Institución] (2025)
-
----
-
-⭐ Si te gustó este proyecto, dale una estrella en GitHub!
+**Axowill**
+- GitHub: [@AxoWil](https://github.com/Axowil)
+- Email: welfordwillian@gmail.com
