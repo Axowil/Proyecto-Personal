@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios - Mi Portfolio</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AXOWILL</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Amigos.html">Amigos</a>
+                <a href="blog.html">Blog</a>
+                <a href="estudiosU.html">Estudios</a>
+                <a href="comentarios.html" class="active">Comentarios</a>
+                <button class="theme-toggle" id="themeToggle">
+                   <img src="icons/sun.svg" alt="Theme" class="icon" id="themeIcon">
+                </button>   
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Comentarios -->
+    <section class="comments-section">
+        <div class="container">
+            <div class="comments-header">
+                <h1 class="section-title"> Comentarios </h1>
+                <p class="section-subtitle">Deja tu mensaje, opinión o saludo. Dime algo</p>
+                <div class="comments-stats">
+                    <span class="stat-badge">
+                        <span class="stat-number" id="totalComments">0</span>
+                        <span class="stat-label">Comentarios</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Alerta de mensajes -->
+            <div id="alert-message" class="alert-box" style="display: none;"></div>
+
+            <!-- Formulario de Comentario -->
+            <div class="comment-form-card">
+                <h2 class="form-title">Deja tu comentario</h2>
+                <form id="commentForm" class="comment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre *</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Comentario *</label>
+                        <textarea id="comment" name="comment" required rows="4" placeholder="Escribe tu comentario aquí... (máximo 500 caracteres)" maxlength="500"></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span> / 500 caracteres
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Publicar Comentario</span>
+                        <span class="btn-loading" style="display: none;">Enviando...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Filtros y búsqueda -->
+            <div class="comments-controls">
+                <h2 class="comments-list-title">Todos los comentarios</h2>
+                <div class="controls-actions">
+                    <select id="sortOrder" class="sort-select">
+                        <option value="newest">Mas recientes</option>
+                        <option value="oldest">Mas antiguos</option>
+                    </select>
+                    <button id="refreshBtn" class="btn-refresh"> Actualizar</button>
+                </div>
+            </div>
+
+            <!-- Lista de Comentarios -->
+            <div id="commentsList" class="comments-list">
+                <!-- Los comentarios se cargarán aquí dinámicamente -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Cargando comentarios...</p>
+                </div>
+            </div>
+
+            <!-- Mensaje cuando no hay comentarios -->
+            <div id="noComments" class="no-comments" style="display: none;">
+                <div class="empty-state">
+                    <h3>Aún no hay comentarios</h3>
+                    <p>¡Sé el primero en dejar un comentario!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Jscript/script.js"></script>
+    <script src="Jscript/comentarios.js"></script>
+</body>
+</html>

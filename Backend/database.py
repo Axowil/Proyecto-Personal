@@ -12,7 +12,7 @@ def get_connection():
     return conn
 
 def init_db():
-    """Inicializar base de datos y crear tabla de contactos"""
+    """Inicializar base de datos y crear tablas"""
     conn = get_connection()
     cursor = conn.cursor()
     
@@ -29,9 +29,22 @@ def init_db():
         )
     ''')
     
+    # Crear tabla de comentarios
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS comments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            comment TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    
     conn.commit()
     conn.close()
     print("✅ Base de datos inicializada correctamente")
+
+# ========== FUNCIONES PARA MENSAJES DE CONTACTO ==========
 
 def save_message(name, email, subject, message):
     """Guardar nuevo mensaje de contacto"""
@@ -79,34 +92,6 @@ def get_all_messages():
     
     return messages
 
-def get_message_by_id(message_id):
-    """Obtener un mensaje específico por ID"""
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute('''
-        SELECT * FROM contact_messages WHERE id = ?
-    ''', (message_id,))
-    
-    row = cursor.fetchone()
-    conn.close()
-    
-    if row:
-        return dict(row)
-    return None
-
-def mark_as_read(message_id):
-    """Marcar mensaje como leído"""
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute('''
-        UPDATE contact_messages SET read = 1 WHERE id = ?
-    ''', (message_id,))
-    
-    conn.commit()
-    conn.close()
-
 def delete_message_by_id(message_id):
     """Eliminar mensaje por ID"""
     conn = get_connection()
@@ -120,12 +105,87 @@ def delete_message_by_id(message_id):
     
     return affected > 0
 
-def get_unread_count():
-    """Contar mensajes no leídos"""
+# ========== FUNCIONES PARA COMENTARIOS ==========
+
+def save_comment(name, email, comment):
+    """Guardar nuevo comentario"""
     conn = get_connection()
     cursor = conn.cursor()
     
-    cursor.execute('SELECT COUNT(*) as count FROM contact_messages WHERE read = 0')
+    cursor.execute('''
+        INSERT INTO comments (name, email, comment)
+        VALUES (?, ?, ?)
+    ''', (name, email, comment))
+    
+    comment_id = cursor.lastrowid
+    conn.commit()
+    conn.close()
+    
+    print(f"✅ Comentario guardado con ID: {comment_id}")
+    return comment_id
+
+def get_all_comments():
+    """Obtener todos los comentarios (ordenados por fecha descendente)"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT id, name, email, comment, created_at
+        FROM comments
+        ORDER BY created_at DESC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    # Convertir a lista de diccionarios
+    comments = []
+    for row in rows:
+        comments.append({
+            'id': row['id'],
+            'name': row['name'],
+            'email': row['email'],
+            'comment': row['comment'],
+            'created_at': row['created_at']
+        })
+    
+    return comments
+
+def get_comment_by_id(comment_id):
+    """Obtener un comentario específico por ID"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT * FROM comments WHERE id = ?
+    ''', (comment_id,))
+    
+    row = cursor.fetchone()
+    conn.close()
+    
+    if row:
+        return dict(row)
+    return None
+
+def delete_comment_by_id(comment_id):
+    """Eliminar comentario por ID"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('DELETE FROM comments WHERE id = ?', (comment_id,))
+    affected = cursor.rowcount
+    
+    conn.commit()
+    conn.close()
+    
+    return affected > 0
+
+def get_comments_count():
+    """Contar total de comentarios"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('SELECT COUNT(*) as count FROM comments')
     count = cursor.fetchone()['count']
     
     conn.close()
