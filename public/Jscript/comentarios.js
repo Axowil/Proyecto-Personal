@@ -1,5 +1,5 @@
 // API URL - Cambiar cuando despliegues en Render
-const API_URL = 'https://backendwil.onrender.com';
+const API_URL = 'https://backendwil.onrender.com/api';
 
 // Estado global
 let allComments = [];
