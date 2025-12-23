@@ -9,6 +9,7 @@ CORS(app)
 # Inicializar base de datos al arrancar
 init_db()
 
+
 @app.route('/')
 def home():
     return jsonify({
