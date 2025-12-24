@@ -13,6 +13,8 @@ import os
 app = Flask(__name__)
 CORS(app, origins="*")  # Permitir peticiones desde el frontend
 
+app = Flask(__name__, static_folder='../public', static_url_path='')
+
 # Inicializar base de datos al arrancar
 init_db()
 

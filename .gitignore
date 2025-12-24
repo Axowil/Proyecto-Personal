@@ -1,0 +1,19 @@
+# Bases de datos SQLite
+*.db
+*.sqlite3
+
+# Python (Caché y archivos temporales)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# VS Code
+.vscode/
+
+# Otros
+.DS_Store
