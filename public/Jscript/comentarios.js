@@ -1,15 +1,14 @@
 // API URL - Cambiar cuando despliegues en Render
-const API_URL = 'https://backendwil.onrender.com/api';
+const API_URL = 'http://127.0.0.1:5000/api';
 
 // Estado global
 let allComments = [];
 let currentSort = 'newest';
 
-// Inicializar cuando cargue la página
 document.addEventListener('DOMContentLoaded', () => {
     loadComments();
     initializeEventListeners();
-});
+}); 
 
 // Event Listeners
 function initializeEventListeners() {
@@ -17,7 +16,7 @@ function initializeEventListeners() {
     document.getElementById('commentForm').addEventListener('submit', handleSubmitComment);
     
     // Contador de caracteres
-    document.getElementById('comment').addEventListener('input', updateCharCounter);
+    document.getElementById('comment').addEventListener('input', updateCharCounter);    
     
     // Ordenar comentarios
     document.getElementById('sortOrder').addEventListener('change', (e) => {

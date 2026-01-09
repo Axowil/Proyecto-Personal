@@ -69,6 +69,16 @@ def get_all_messages():
     conn.close()
     return [dict(row) for row in rows]
 
+def delete_message_by_id(message_id):
+    """Eliminar un mensaje por ID"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM contact_messages WHERE id = ?', (message_id,))
+    affected = cursor.rowcount
+    conn.commit()
+    conn.close()
+    return affected > 0
+
 # ========== FUNCIONES PARA COMENTARIOS ==========
 
 def save_comment(name, email, comment):
